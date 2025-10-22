@@ -1,6 +1,6 @@
 # MailGuard-AI
 
-**MailGuard AI** – An Email Spam Detection System
+**MailGuard AI** - Email Spam Detector
 
 This project can identify whether an email or message is **spam** or **not spam** using machine learning.  
 It helps filter unwanted content and enhances communication security.
