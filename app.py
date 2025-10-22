@@ -4,8 +4,8 @@ import os
 
 # Load Model and Vectorizer
 
-MODEL_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'spam_model.pkl')
-VECTORIZER_PATH = os.path.join(os.path.dirname(__file__), '..', 'models', 'vectorizer.pkl')
+MODEL_PATH = os.path.join(os.path.dirname(__file__),'models', 'spam_model.pkl')
+VECTORIZER_PATH = os.path.join(os.path.dirname(__file__),'models', 'vectorizer.pkl')
 
 try:
     with open(MODEL_PATH, 'rb') as model_file:
