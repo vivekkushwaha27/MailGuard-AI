@@ -28,7 +28,7 @@ input_msg = st.text_area("Enter email/message:")
 
 if st.button("Analyze"):
     if not input_msg.strip():
-        st.warning("Please enter a valid message or email.")
+        st.error("Please enter a valid message or email.")
     else:
         cleaned = clean_text(input_msg)
         vector = vectorizer.transform([cleaned])
