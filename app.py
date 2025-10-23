@@ -27,14 +27,17 @@ st.write("Type your email or message below and check if it's spam or not!")
 input_msg = st.text_area("Enter email/message:")
 
 if st.button("Analyze"):
-    cleaned = clean_text(input_msg)
-    vector = vectorizer.transform([cleaned])
-    prediction = model.predict(vector)[0]
-    proba = model.predict_proba(vector)[0][1] * 100
-
-    if prediction == 1:
-        st.error(f"Spam Detected! (Spam Probability: {proba:.2f}%)")
+    if not input_msg.strip():
+        st.warning("Please enter a valid message or email.")
     else:
-        st.success(f"Not Spam (Spam Probability: {proba:.2f}%)")
+        cleaned = clean_text(input_msg)
+        vector = vectorizer.transform([cleaned])
+        prediction = model.predict(vector)[0]
+        proba = model.predict_proba(vector)[0][1] * 100
+
+        if prediction == 1:
+            st.error(f"Spam Detected! (Spam Probability: {proba:.2f}%)")
+        else:
+            st.success(f"Not Spam (Spam Probability: {proba:.2f}%)")
 
 st.caption("Developed by Vivek Kushwaha")
